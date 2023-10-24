@@ -1,8 +1,13 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
-  containerTitle: {
+  containerBody: {
     flex:1,
+    backgroundColor: "#1A1A1A"
+  },
+  containerTitle: {
+    height: 200,
+    // flex:1,
     paddingHorizontal:24,
     paddingTop:75,
     backgroundColor:'#0D0D0D',
@@ -11,18 +16,21 @@ export const styles = StyleSheet.create({
   title: {
     color: "#4EA8DE",
     fontSize: 20,
-    fontWeight: '900'
+    fontWeight: '900',
   },
   container: {
-    flex:1,
+    // flex:5,
     paddingHorizontal:24,
     paddingTop:75,
-    backgroundColor:'#1A1A1A',
     alignItems: 'center'
   },
   containerInput: {
+    height: 1,
+    // flex: 0.01,
+    alignItems: 'center',
+    justifyContent: 'center',
     flexDirection: 'row',
-    gap: 4
+    gap: 4,
   },
   input: {
     height: 54,
@@ -34,10 +42,14 @@ export const styles = StyleSheet.create({
     borderRadius: 6
   },
   containerChecked: {
+    paddingBottom: 20,
     width: "100%",
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    borderBottomWidth: 1,
+    borderBlockColor: "#333333",
+    marginBottom: 48
   },
   textCreatedContainer: {
     flexDirection: 'row',

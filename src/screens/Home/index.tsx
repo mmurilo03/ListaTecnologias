@@ -3,6 +3,7 @@ import { styles } from "./styles"
 import ButtonAdd from "../../components/ButtonAdd";
 import { useState } from "react";
 import TechNumer from "../../components/TechNumber";
+import TechContainer from "../../components/TechContainer";
 
 interface TechObj {
     name: string,
@@ -13,16 +14,47 @@ const Home = () => {
 
     const [techList, setTechList] = useState<TechObj[]>([] as TechObj[]);
 
+    const addTech = () => {
+        const tech: TechObj = {name: techName, check: false};
+        setTechList([tech, ...techList]);
+    }
+
+    const checkTech = (index: number) => {
+        const techListTemp: TechObj[] = [...techList];
+        const tech: TechObj = {name: techListTemp[index].name, check: techListTemp[index].check};
+        console.log(index);
+        
+        tech.check = !tech.check;
+        if (tech.check){
+            techListTemp.splice(index, 1);
+            techListTemp.push(tech)
+        } else {
+            techListTemp.splice(index, 1);
+            techListTemp.unshift(tech)
+        }
+        setTechList(techListTemp);
+    }
+
+    const deleteTech = (index: number) => {
+        console.log(techList.length);
+        const techListTemp: TechObj[] = [...techList];
+        techListTemp.splice(index);
+        setTechList(techListTemp);
+    }
+
+    const [techName, setTechName] = useState<string>("");
+
     return (
         <>
+        <View style={styles.containerBody}>
             <View style={styles.containerTitle}>
                 <Text style={styles.title}>Minhas Tecnologias</Text>
             </View>
+            <View style={styles.containerInput}>
+                <TextInput onChangeText={text => setTechName(text)} style={styles.input} placeholder="Adicione uma nova tarefa" placeholderTextColor="#808080"/>
+                <ButtonAdd func={addTech} />
+            </View>
             <View style={styles.container}>
-                <View style={styles.containerInput}>
-                    <TextInput style={styles.input} placeholder="AAAAAAAAAAAA" placeholderTextColor="#808080"/>
-                    <ButtonAdd></ButtonAdd>
-                </View>
                 <View style={styles.containerChecked}>
                     <View style={styles.textCreatedContainer}>
                         <Text style={styles.textCreated}>Criadas</Text>
@@ -30,10 +62,12 @@ const Home = () => {
                     </View>
                     <View style={styles.textCreatedContainer}>
                         <Text style={styles.textChecked}>Concluidas</Text>
-                        <TechNumer num={3} />
+                        <TechNumer num={0} />
                     </View>
                 </View>
+                <TechContainer checkFunc={checkTech} deleteFunc={deleteTech} techList={techList}/>
             </View>
+        </View>
         </>
     )
 }
