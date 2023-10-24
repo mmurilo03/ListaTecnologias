@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   title: {
     color: "#4EA8DE",
     fontSize: 20,
-    fontWeight: 'bold'
+    fontWeight: '900'
   },
   container: {
     flex:1,
@@ -32,5 +32,25 @@ export const styles = StyleSheet.create({
     color: "#F2F2F2",
     padding: 16,
     borderRadius: 6
+  },
+  containerChecked: {
+    width: "100%",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  textCreatedContainer: {
+    flexDirection: 'row',
+    gap: 8
+  },
+  textCreated: {
+    color: "#4EA8DE",
+    fontSize: 14,
+    fontWeight: '700'
+  },
+  textChecked: {
+    color: "#8284FA",
+    fontSize: 14,
+    fontWeight: '700'
   }
 })

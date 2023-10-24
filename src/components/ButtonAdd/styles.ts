@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const style = StyleSheet.create({
+export const styles = StyleSheet.create({
     buttonAdd: {
         alignItems: "center",
         justifyContent: "center",
@@ -10,3 +10,5 @@ export const style = StyleSheet.create({
         borderRadius: 6
     }
 })
+
+export default styles;
