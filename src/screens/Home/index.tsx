@@ -13,6 +13,7 @@ interface TechObj {
 const Home = () => {
 
     const [techList, setTechList] = useState<TechObj[]>([] as TechObj[]);
+    const [checkCount, setCheckCount] = useState<number>(0);
 
     const addTech = () => {
         const tech: TechObj = {name: techName, check: false};
@@ -32,6 +33,11 @@ const Home = () => {
             techListTemp.splice(index, 1);
             techListTemp.unshift(tech)
         }
+        let checkedCount = 0;
+        techListTemp.forEach(element => {
+            if (element.check) checkedCount++
+        });
+        setCheckCount(checkedCount);
         setTechList(techListTemp);
     }
 
@@ -62,7 +68,7 @@ const Home = () => {
                     </View>
                     <View style={styles.textCreatedContainer}>
                         <Text style={styles.textChecked}>Concluidas</Text>
-                        <TechNumer num={0} />
+                        <TechNumer num={checkCount} />
                     </View>
                 </View>
                 <TechContainer checkFunc={checkTech} deleteFunc={deleteTech} techList={techList}/>
