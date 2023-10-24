@@ -1,4 +1,4 @@
-import { Text } from "react-native"
+import { Text, View } from "react-native"
 import styles from "./styles";
 
 
@@ -8,7 +8,9 @@ interface Props {
 
 const TechNumer = ({num}: Props) => {
     return (
-        <Text style={styles.text}>{num}</Text>
+        <View style={styles.textContainer}>
+            <Text style={styles.text}>{num}</Text>
+        </View>
     )
 }
 
