@@ -1,4 +1,4 @@
-import { Text, TextInput, View } from "react-native"
+import { Text, TextInput, View, useWindowDimensions } from "react-native"
 import { styles } from "./styles"
 import ButtonAdd from "../../components/ButtonAdd";
 import { useState } from "react";
@@ -56,7 +56,7 @@ const Home = () => {
     return (
         <>
         <View style={styles.containerBody}>
-            <View style={styles.containerTitle}>
+            <View style={[styles.containerTitle, { height: useWindowDimensions().height * 0.25}]}>
                 <Text style={styles.title}>Minhas Tecnologias</Text>
             </View>
             <View style={styles.containerInput}>
