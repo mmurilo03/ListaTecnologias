@@ -1,6 +1,5 @@
-import { Text, TouchableOpacity } from "react-native"
-import { styles } from "./styles";
-import  Icon  from "react-native-vector-icons/FontAwesome5";
+import { TouchableOpacity } from "react-native"
+import Icon from "react-native-vector-icons/FontAwesome5";
 
 interface Props {
     index: number,

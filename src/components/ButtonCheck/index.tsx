@@ -1,6 +1,6 @@
 import { TouchableOpacity } from "react-native"
-import { styles } from "./styles";
-import  Icon  from "react-native-vector-icons/FontAwesome5";
+import IconF from "react-native-vector-icons/FontAwesome5";
+import IconE from "react-native-vector-icons/Entypo";
 
 interface Props {
     check: boolean,
@@ -11,7 +11,7 @@ interface Props {
 const ButtonCheck = ({check, index, func}: Props) => {
     return (
         <TouchableOpacity onPress={() => func(index)}>
-            {check ? <Icon name="check-circle" color={"#5E60CE"} size={25}></Icon> : <Icon name="dot-circle" color={"#4EA8DE"} size={25}></Icon>}
+            {check ? <IconF name="check-circle" color={"#5E60CE"} size={25}></IconF> : <IconE name="circle" color={"#4EA8DE"} size={25}></IconE>}
         </TouchableOpacity>
     )
 }
