@@ -25,7 +25,7 @@ const TechContainer = ({techList, checkFunc, deleteFunc}: Props) => {
             </View> : <ScrollView contentContainerStyle={styles.techItemList} style={[styles.techItemListStyle, { height: useWindowDimensions().height * 0.5}]}>
                 {techList.map((element, key) => {
                 return(
-                    <View style={styles.techItem} key={key}>
+                    <View style={[styles.techItem, {borderWidth: 1, borderColor: element.check ? "#262626" : "#333333"}]} key={key}>
                         <View style={styles.techItemTextAndCheck}>
                             <ButtonCheck index={key} func={checkFunc} check={element.check} />
                             <Text style={[styles.techItemText, {textDecorationLine: element.check ? "line-through" : "none"}]}>{element.name}</Text>
