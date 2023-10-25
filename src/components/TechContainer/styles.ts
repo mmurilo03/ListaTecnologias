@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         width: "100%",
     },
     techItem: {
-        backgroundColor: "#333333",
+        backgroundColor: "#262626",
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
