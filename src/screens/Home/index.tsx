@@ -23,7 +23,6 @@ const Home = () => {
     const checkTech = (index: number) => {
         const techListTemp: TechObj[] = [...techList];
         const tech: TechObj = {name: techListTemp[index].name, check: techListTemp[index].check};
-        console.log(index);
         
         tech.check = !tech.check;
         if (tech.check){
@@ -33,19 +32,23 @@ const Home = () => {
             techListTemp.splice(index, 1);
             techListTemp.unshift(tech)
         }
-        let checkedCount = 0;
-        techListTemp.forEach(element => {
-            if (element.check) checkedCount++
-        });
-        setCheckCount(checkedCount);
+        countCheck(techListTemp);
         setTechList(techListTemp);
     }
 
     const deleteTech = (index: number) => {
-        console.log(techList.length);
         const techListTemp: TechObj[] = [...techList];
-        techListTemp.splice(index);
+        techListTemp.splice(index, 1);
+        countCheck(techListTemp);
         setTechList(techListTemp);
+    }
+
+    const countCheck = (list: TechObj[]) => {
+        let checkedCount = 0;
+        list.forEach(element => {
+            if (element.check) checkedCount++
+        });
+        setCheckCount(checkedCount);
     }
 
     const [techName, setTechName] = useState<string>("");

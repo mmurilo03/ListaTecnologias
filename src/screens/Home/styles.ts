@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
   },
   containerTitle: {
     height: 200,
-    // flex:1,
     paddingHorizontal:24,
     paddingTop:75,
     backgroundColor:'#0D0D0D',
@@ -19,14 +18,12 @@ export const styles = StyleSheet.create({
     fontWeight: '900',
   },
   container: {
-    // flex:5,
     paddingHorizontal:24,
     paddingTop:75,
     alignItems: 'center'
   },
   containerInput: {
     height: 1,
-    // flex: 0.01,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
