@@ -1,4 +1,4 @@
-import { Text, View } from "react-native"
+import { ScrollView, Text, View, useWindowDimensions } from "react-native"
 import styles from "./styles";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import ButtonCheck from "../ButtonCheck";
@@ -22,7 +22,7 @@ const TechContainer = ({techList, checkFunc, deleteFunc}: Props) => {
                 <Icon name="clipboard-list" color={"#808080"} size={50}></Icon>
                 <Text style={styles.textBold}>Você ainda não tem tecnologias cadastradas</Text>
                 <Text style={styles.textNormal}>Crie tarefas e organize seus itens a fazer</Text>
-            </View> : <View style={styles.techItemList}>
+            </View> : <ScrollView contentContainerStyle={styles.techItemList} style={[styles.techItemListStyle, { height: useWindowDimensions().height * 0.5}]}>
                 {techList.map((element, key) => {
                 return(
                     <View style={styles.techItem} key={key}>
@@ -36,7 +36,7 @@ const TechContainer = ({techList, checkFunc, deleteFunc}: Props) => {
                     </View>
                 )
             })}
-            </View> }
+            </ScrollView> }
         </>
     )
 }
