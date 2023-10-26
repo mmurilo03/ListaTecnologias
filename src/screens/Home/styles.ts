@@ -33,6 +33,7 @@ export const styles = StyleSheet.create({
     width: 271,
     fontSize: 16,
     backgroundColor: "#262626",
+    borderWidth: 1,
     color: "#F2F2F2",
     padding: 16,
     borderRadius: 6
