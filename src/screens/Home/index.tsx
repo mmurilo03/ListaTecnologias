@@ -14,6 +14,9 @@ const Home = () => {
   const [techList, setTechList] = useState<TechObj[]>([] as TechObj[]);
   const [checkCount, setCheckCount] = useState<number>(0);
 
+  const [techName, setTechName] = useState<string>("");
+  const [typing, setTyping] = useState<boolean>(false);
+
   const addTech = () => {
     const tech: TechObj = { name: techName, check: false };
     setTechList([tech, ...techList]);
@@ -52,9 +55,6 @@ const Home = () => {
     });
     setCheckCount(checkedCount);
   };
-
-  const [techName, setTechName] = useState<string>("");
-  const [typing, setTyping] = useState<boolean>(false);
 
   return (
     <>
