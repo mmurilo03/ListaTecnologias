@@ -3,6 +3,7 @@ import styles from "./styles";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import ButtonCheck from "../ButtonCheck";
 import ButtonDelete from "../ButtonDelete";
+import ListItem from "../ListItem";
 
 interface TechObj {
   name: string;
@@ -38,40 +39,7 @@ const TechContainer = ({ techList, checkFunc, deleteFunc }: Props) => {
         >
           {techList.map((element, key) => {
             return (
-              <View
-                style={[
-                  styles.techItem,
-                  {
-                    borderWidth: 1,
-                    borderColor: element.check ? "#262626" : "#333333",
-                  },
-                ]}
-                key={key}
-              >
-                <View style={styles.techItemTextAndCheck}>
-                  <ButtonCheck
-                    index={key}
-                    func={checkFunc}
-                    check={element.check}
-                  />
-                  <Text
-                    style={[
-                      styles.techItemText,
-                      {
-                        textDecorationLine: element.check
-                          ? "line-through"
-                          : "none",
-                        color: element.check ? "#808080" : "#F2F2F2",
-                      },
-                    ]}
-                  >
-                    {element.name}
-                  </Text>
-                </View>
-                <View>
-                  <ButtonDelete index={key} func={deleteFunc} />
-                </View>
-              </View>
+              <ListItem checkFunc={checkFunc} deleteFunc={deleteFunc} index={key} tech={element} />
             );
           })}
         </ScrollView>
