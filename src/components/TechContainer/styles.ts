@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
     },
     techItemText: {
         flexShrink: 1,
-        color: "#F2F2F2",
         textAlign: "justify"
     },
     techItemTextAndCheck: {
